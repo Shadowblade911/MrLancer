@@ -1,0 +1,7 @@
+{
+  "SHEET_API_KEY": "from-google-aaaaa-bbbbb-ccccc-dddd",
+  "BOT_TOKEN": "discord-api-bot-token",
+  "REC_FORM_ID": "google-forms-id",
+  "REC_RESPONSES_ID": "google-sheets-id",
+  "REC_RESPONSE_RANGE": "Recommendations!A1:T2000"
+}

@@ -1,0 +1,18 @@
+{
+  "name": "mrlancer",
+  "version": "1.0.0",
+  "description": "A bot meant to track and record online fiction sources, authors, and prompts for users",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Commander Hazama",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "discord.js": "^12.5.1",
+    "googleapis": "^39.2.0",
+    "keyv": "^4.0.3",
+    "lodash": "^4.17.20"
+  }
+}
