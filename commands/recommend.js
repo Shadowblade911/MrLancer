@@ -26,9 +26,10 @@ const reccomendationForm = `https://docs.google.com/forms/u/2/d/e/${config.REC_F
 
 function handleReccomendation(message, requestInfo) {
     if (requestInfo.length < 2) {
-        generateErrorReply(message, 'You have to at least tell the name, and where I can find it!');
+        generateErrorReply(message, 'You have to tell me the name! Please format it like so: \`[name]\` [url]');
     }
 
+    console.log(requestInfo);
     let title = requestInfo.shift();
     const location = requestInfo.shift();
 
@@ -38,7 +39,8 @@ function handleReccomendation(message, requestInfo) {
     }
 
     if (!isValidUrl(location)) {
-        generateErrorReply(message, 'You have to give me a valid url!');
+        message.reply(location);
+        generateErrorReply(message, 'You have to give me a valid url! Please format it like so: \`[name] \` [url]')
         return;
     }
 
@@ -49,7 +51,7 @@ function handleReccomendation(message, requestInfo) {
     let options = {};
     try {
         options = paramParser(requestInfo);
-        options.genre = options.genre.map(genre = internalKeysToExternal[genre]);
+        options.genre = _.map(options.genre, genre => internalKeysToExternal[genre]);
     } catch(err){
         generateErrorReply(message, err.message);
         return;
