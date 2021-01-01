@@ -1,4 +1,3 @@
-
 const bookTitles = [
     'Pride and Prejudice',
     'Lord of the Flies',
@@ -93,7 +92,30 @@ const bookTitles = [
     "Christine",
     "Pet Sematary", 
     "Let The Right One In",
-    "A Little Life"
+    "A Little Life",
+    "Shift",
+    "A Thermos for Valerie",
+    "An Unlikely Alliance",
+    "Captive Audience",
+    "Pits",
+    "Real Life",
+    "Spirit of Protection",
+    "A Snapping Sound",
+    "Diamonds in the Rough",
+    "Spite Is a Perfectly Good Motivation to Survive a Zombie Apocalypse",
+    "Mirror, Mirror",
+    "Heavy Silences",
+    "Reconciliation",
+    "Insomnia",
+    "My Immortal",
+    "The Tale of Sierra",
+    "Beneath the Depths",
+    "Treading Water",
+    "Twilight",
+    "Breaking Dawn",
+    "Eclipse",
+    "New Moon",
+    "Haunted Halls",
 ];
 
 
