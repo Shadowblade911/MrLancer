@@ -8,6 +8,8 @@ const { reccomend } = require('./commands/recommend.js');
 
 const { fetch } = require('./commands/fetch.js');
 
+const { authorSignUp } = require('./commands/authorSignUp.js');
+
 const client = new Discord.Client();
 
 client.login(config.BOT_TOKEN);
@@ -16,9 +18,13 @@ const prefixes = ["!MrLancer", "!MrLance", "!MrL"];
 
 const commands = {
     rec: 'rec',
-    request: 'request',
+    fetch: 'fetch',
     help: 'help',
+    author: 'author',
+    search: 'search',
 };
+
+
 
 // Function Body
 client.on("message", function (message) {
@@ -39,11 +45,24 @@ client.on("message", function (message) {
         case commands.rec:
             reccomend(message, strings);
             return;
-        case commands.request:
+        case commands.search:
             fetch(message, strings);
             return;
         case commands.help:
             message.reply("this should eventually become a useful help message");
+            return;
+        case commands.fetch:
+            generateErrorReply(message, 'Stop trying to make fetch happen!');
+            return;
+        case commands.author: 
+            let nextCommand = strings.shift();
+            nextCommand = nextCommand && nextCommand.toLocaleLowerCase();
+            switch(nextCommand){
+                case '`sign up`':
+                    authorSignUp(message, strings);
+                    return;
+            } 
+
             return;
         default: 
            (generateErrorReply(message, `I don't understand you! I just know how to handle ${Object.keys(commands).join(', ')}`));
