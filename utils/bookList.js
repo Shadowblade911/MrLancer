@@ -8,9 +8,11 @@ const memeTitles = [
     "Homestuck",
     "Harry Potter and the Death of the Transphobe",
     "Trans Wizard Harriet Porber and the Bad Boy Parasaurolophus",
-    "Harry Potter and the Curse Child",
+    "Harry Potter and the Cursed Child",
     "The Forbidden Days of McPhantom",
     "How Bad Do You Want It",
+    "All My Friends Are Dead",
+    "Go the Fuck to Sleep",
 ];
 
 const ficTitles = [
@@ -65,8 +67,6 @@ const realBookTitles = [
     "Warriors: Into the Wild",
     "Jekyll and Hyde",
     "Invisible Man",
-    "All My Friends Are Dead",
-    "Go the Fuck to Sleep",
     "Hard Times",
     "A Tale of Two Cities",
     "The Count of Monte Cristo",
@@ -185,6 +185,8 @@ const realBookTitles = [
     "Pretties",
     "Specials",
     "Extras",
+    "The Prince and the Pauper",
+    "Percy Jackson & the Olympians: The Lightning Thief",
 ];
 
 

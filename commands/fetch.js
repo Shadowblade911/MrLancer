@@ -122,9 +122,6 @@ async function fetch(message, requestInfo) {
 
         let matches = fics;
 
-
-        console.log(options);
-
         if(options.completed){
             matches = matches.filter(fic => fic.isCompleted === options.completed);   
         }
@@ -155,7 +152,7 @@ async function fetch(message, requestInfo) {
 
 
     } catch(err) {
-        console.log(err);
+        console.error(err);
         generateErrorReply(message, `Something went wrong!`);
     };
 

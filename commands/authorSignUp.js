@@ -15,7 +15,7 @@ const questionEntryValues = {
  }
 
 
-const authorForm = `https://docs.google.com/forms/u/2/d/e/${config.SIGN_UP_FORM_ID}/formResponse`;
+const authorForm = `https://docs.google.com/forms/d/e/${config.SIGN_UP_FORM_ID}/formResponse`;
 
 
 
@@ -63,7 +63,7 @@ function authorSignUp(message, requestInfo) {
     }).then(res => {
         message.reply(`Excellent! I've added ${name} to the list at ${url}` + (secondaryUrl === undefined ? `` : ` and ${secondaryUrl}`));
     }).catch(err => {
-        console.log(err);
+        console.error(err);
         generateErrorReply(message, `Something went wrong!`);
     });
 

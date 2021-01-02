@@ -20,7 +20,7 @@ const questionEntryValues = {
  }
 
 
-const reccomendationForm = `https://docs.google.com/forms/u/2/d/e/${config.REC_FORM_ID}/formResponse`;
+const reccomendationForm = `https://docs.google.com/forms/d/e/${config.REC_FORM_ID}/formResponse`;
 
 
 
@@ -29,7 +29,6 @@ function handleReccomendation(message, requestInfo) {
         generateErrorReply(message, 'You have to tell me the name! Please format it like so: \`[name]\` [url]');
     }
 
-    console.log(requestInfo);
     let title = requestInfo.shift();
     const location = requestInfo.shift();
 
@@ -79,7 +78,7 @@ function handleReccomendation(message, requestInfo) {
     }).then(res => {
         message.reply(`I got your reccomendation for ${title} found at ${location}`);
     }).catch(err => {
-        console.log(err);
+        console.error(err);
         generateErrorReply(message, `Something went wrong!`);
     });
 

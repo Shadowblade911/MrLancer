@@ -10,6 +10,13 @@ const { fetch } = require('./commands/fetch.js');
 
 const { authorSignUp } = require('./commands/authorSignUp.js');
 
+const { fetchAuthor } = require('./commands/authorFetch.js');
+
+
+const { promptSuggestion } = require('./commands/promptSuggest.js');
+
+const { fetchPrompt } = require('./commands/promptFetch.js');
+
 const client = new Discord.Client();
 
 client.login(config.BOT_TOKEN);
@@ -22,7 +29,10 @@ const commands = {
     help: 'help',
     author: 'author',
     search: 'search',
+    suggest: 'suggest',
+    prompt: 'prompt'
 };
+
 
 
 
@@ -61,8 +71,18 @@ client.on("message", function (message) {
                 case '`sign up`':
                     authorSignUp(message, strings);
                     return;
+                case 'search':
+                    fetchAuthor(message, strings);
+                    return;
+                default:
+                    generateErrorReply(message, `I do not recongize that sub command ${nextCommand}, I know \`sign up\` and search`);
+                    return;
             } 
-
+        case commands.prompt: 
+            fetchPrompt(message, strings);
+            return;
+        case commands.suggest:
+            promptSuggestion(message, strings);
             return;
         default: 
            (generateErrorReply(message, `I don't understand you! I just know how to handle ${Object.keys(commands).join(', ')}`));
