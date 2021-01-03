@@ -8,6 +8,8 @@ const config = require("../config.json");
 
 const axios = require('axios').default;
 
+// These are mappings found by posting a google form response and checking the post results
+
 const questionEntryValues = {
     name: 'entry.1236049569',
     primaryUrl: 'entry.442202316',
@@ -20,6 +22,7 @@ const authorForm = `https://docs.google.com/forms/d/e/${config.SIGN_UP_FORM_ID}/
 
 
 function authorSignUp(message, requestInfo) {
+    // minum values check
     if (requestInfo.length < 2) {
         generateErrorReply(message, 'You have to tell a name and location to find your works! Please format it like so: \`[name]\` [url] [url]');
     }

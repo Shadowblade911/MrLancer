@@ -18,11 +18,13 @@ const recommendedFicsSheet = `https://content-sheets.googleapis.com/v4/spreadshe
 
 const linkToSheetSource = `https://docs.google.com/spreadsheets/d/${sheetId}/edit?usp=sharing`
 
-
+// formatted response of a fic
 const relayFic = (fic) => {
     return `\n ${fic.name} \n ${fic.url} \n Reccomended by: ${fic.reccedBy} \n genres: ${listGenres(fic)}`;
 }
 
+// take an array of fics and returns one, or an error message
+// if there are multiple, it slightly weights in favor of ones whos have been recced multiple times. 
 const replyWithFic = (message, ficsArr) => {
     if(ficsArr.length === 0){
         message.reply("Sorry! I didn't find any listed with those requirements!");

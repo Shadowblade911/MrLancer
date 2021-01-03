@@ -20,9 +20,13 @@ const { fetchPrompt } = require('./commands/promptFetch.js');
 const client = new Discord.Client();
 
 client.login(config.BOT_TOKEN);
+
+// These are the prefixes that the bot is going to respond to. 
+// I kept mistyping MrLancer which is why MrLance is on this...
 const prefixes = ["!MrLancer", "!MrLance", "!MrL"];
 
 
+// Enums for commands. These are what the bots is capable of responding to
 const commands = {
     rec: 'rec',
     fetch: 'fetch',
@@ -36,21 +40,30 @@ const commands = {
 
 
 
-// Function Body
+// this is how we start listening to a message
 client.on("message", function (message) {
+    // if the message is from another bot, ignore this
     if (message.author.bot) return;
+    //if the message is NOT prefixed with a prefix we care about, ignore it
     if (!_.some(prefixes, prefix => message.content.startsWith(prefix))) {
         return;
     }
 
+    // split arguments. Any space not between two ` is skipped. 
     const strings = message.content.split(/ (?=(?:[^\`]*\`[^\`]*\`)*[^\`]*$)/);
 
-    //removes prefix
+    //removes prefix from the strings array
     strings.shift();
+
+    // if no arguements were passed, be done. 
+    if(strings.length === 0){
+        return;
+    }
 
     //gets the command
     let command = strings.shift();
     command = command && command.toLocaleLowerCase();
+
     switch(command){
         case commands.rec:
             reccomend(message, strings);
@@ -62,6 +75,7 @@ client.on("message", function (message) {
             message.reply("this should eventually become a useful help message");
             return;
         case commands.fetch:
+            // I have to include some jokes for my own sanity. 
             generateErrorReply(message, 'Stop trying to make fetch happen!');
             return;
         case commands.author: 
