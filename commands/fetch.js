@@ -46,6 +46,7 @@ const replyWithFic = (message, ficsArr) => {
     return;
 }
 
+// helper function. This converts the an array into an object
 const convertSheet = (sheetRow) => {
     
     return {
@@ -74,7 +75,7 @@ const convertSheet = (sheetRow) => {
     }
 }
 
-
+// code to list genre's associated with a fic
 const listGenres = (fic) => {
     ret = [];
     Object.keys(fic.genres).forEach(key => {
@@ -88,6 +89,7 @@ const listGenres = (fic) => {
 
 async function fetch(message, requestInfo) {
    
+    // handle command to get the list directly
     if(requestInfo[0] === 'list'){
         if(requestInfo.length > 1){
             generateErrorReply(message, `I don't understand what else you are asking. List is a basic command. Did you just mean \`list\`?`);
@@ -108,12 +110,14 @@ async function fetch(message, requestInfo) {
 
          const fics = data.values.filter(ficRow => isValidUrl(ficRow[1])).map(ficRow => convertSheet(ficRow));
       
+         // if no fics are found, respond appropriately
         if(requestInfo.length === 0){
             replyWithFic(message, fics);
             return;
         }
 
 
+        // get options passed in as arguments
         let options = {};
         try {
             options = paramParser(requestInfo);
@@ -122,6 +126,7 @@ async function fetch(message, requestInfo) {
             return;
         }
 
+        // begin filtering the list
         let matches = fics;
 
         if(options.completed){
@@ -150,6 +155,7 @@ async function fetch(message, requestInfo) {
             }
         }
 
+        // return the fic
         replyWithFic(message, matches);
 
 
