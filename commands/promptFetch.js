@@ -16,15 +16,21 @@ const promptSheet = `https://content-sheets.googleapis.com/v4/spreadsheets/${she
 
 const linkToSheetSource = `https://docs.google.com/spreadsheets/d/${sheetId}/edit?usp=sharing`
 
-
+// code to turn a prompt into a response
 const relayPrompt = (prompt) => {
-    return `May I suggest? \n \`\`\`${prompt}\`\`\` \n No need to thank me.`;
-}
 
+    let preface = `May I Suggest?`;
+    if(Math.floor(Math.random * 1000) <= 1){
+        preface = `I gotchu fam.`
+    }
+
+    return `${preface} \n \`\`\`${prompt}\`\`\` \n No need to thank me.`;
+}
 
 
 async function fetchPrompt(message, requestInfo) {
 
+    // message to handle retrieving the list of prompts from the source
     if(requestInfo && requestInfo[0] === 'list'){
         if(requestInfo.length !== 1){
             generateErrorReply(message, `I don't understand what else you are asking. List is a basic command. Did you just mean \`list\`?`);
@@ -56,7 +62,6 @@ async function fetchPrompt(message, requestInfo) {
             message.reply(message, 'Something appears to be wrong and I could not find any prompts, check the sheet via `prompt list` and ensure people have suggested prompts!');
             return;
         }
-
 
         const index = Math.floor(Math.random() * prompts.length);
 

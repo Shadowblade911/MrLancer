@@ -1,3 +1,4 @@
+// test code to find a valid url. 
 var pattern = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/i; // fragment locator
 
 function isValidUrl(str) {

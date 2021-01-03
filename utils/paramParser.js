@@ -1,7 +1,9 @@
 const _ = require('lodash');
 
-const { validGenres, internalKeysToExternal, } = require('./genreHandlers.js');
+const { validGenres, } = require('./genreHandlers.js');
 
+
+// valid options I allow for searching and requesting fics
 const validTypes = {
     NAME: 'name',
     GENRE: 'genre',
@@ -16,19 +18,26 @@ const genreValues = Object.values(validGenres);
 
 const typeKeys = Object.values(validTypes);
 
+// this is code that lets me take arguments for a parameter and assign it to a value. 
+// i.e genre angst, au, hurt-comfort 
+
 const yankParams = (options, validationFunc) => {
     let shouldContinue = true;
    
     params = [];
+    //continue until we find a reason to not, or we run out of options
     while(shouldContinue && options.length !== 0){
+        // if the next option is NOT another key value
         if(typeKeys.indexOf(options[0].toLowerCase()) === -1){
             const nextOption = options.shift().toLowerCase();
+            //optionally validate it and push it into the list
             if(!validationFunc || validationFunc(nextOption)){
                 params.push(nextOption);
             } else {
                 throw new Error(`Unable to validate ${nextOption}`)
             }
         } else {
+            //if it was, we need to quit out of the loop
             shouldContinue = false;
         }
     }

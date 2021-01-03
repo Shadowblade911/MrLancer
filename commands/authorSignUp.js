@@ -9,7 +9,6 @@ const config = require("../config.json");
 const axios = require('axios').default;
 
 // These are mappings found by posting a google form response and checking the post results
-
 const questionEntryValues = {
     name: 'entry.1236049569',
     primaryUrl: 'entry.442202316',

@@ -13,6 +13,9 @@ const memeTitles = [
     "How Bad Do You Want It",
     "All My Friends Are Dead",
     "Go the Fuck to Sleep",
+    "Breadfish",
+    "Mein Kampf",
+    "Extreme Pokemon: The Guide for the Ultimate Fam",
 ];
 
 const ficTitles = [
@@ -41,6 +44,12 @@ const ficTitles = [
     "Electric Veins",
     "Yesterday Upon the Stair",
     "Can I Not Grasp Them with a Tighter Clasp?",
+    "Mirror, Mirror",
+    "Heavy Silences",
+    "Reconciliation",
+    "Insomnia",
+    "Sierra WinterBreeze",
+    "Jersey Boy",
 ]
 
 const realBookTitles = [
@@ -124,11 +133,6 @@ const realBookTitles = [
     "Pet Sematary", 
     "Let The Right One In",
     "A Little Life",
-    "Mirror, Mirror",
-    "Heavy Silences",
-    "Reconciliation",
-    "Insomnia",
-    "The Tale of Sierra",
     "Twilight",
     "Breaking Dawn",
     "Eclipse",
@@ -187,9 +191,65 @@ const realBookTitles = [
     "Extras",
     "The Prince and the Pauper",
     "Percy Jackson & the Olympians: The Lightning Thief",
+    "Sarah Plain and Tall",
+    "Cricket in Times Square",
+    "The Little Mermaid",
+    "The Boxcar Children",
+    "Charlotte's Web",
+    "Beauty and the Beast",
+    "Death of a Salesman",
+    "Pygmalion",
+    "A Doll's House",
+    "Catch-22",
+    "Fahrenheit 451",
+    "Animal Farm",
+    "1984",
+    "To Kill a Mockingbird",
+    "Lord of the Flies",
+    "Brave New World",
+    "The Catcher in the Rye",
+    "Hunger Games",
+    "Wuthering Heights",
+    "Lolita",
+    "The Zelda Encylopedia",
+    "Hyrule Historia",
+    "The Very Hungry Caterpiller",
+    "Slugs and Love",
+    "Little House in the Big Woods",
+    "Elmer and the Dragon",
+    "The Dragon's Blueland",
+    "The Courage of Sarah Noble",
+    "The Hobbit",
+    "The Fellowship of the Ring",
+    "The Two Towers",
+    "The Return of the King",
+    "The Communist Manifesto",
+    "Little House on the Prairie",
+    "The Jungle Book",
+    "The Little Prince",
+    "Robin Hood",
+    "Wizard of Oz",
+    "The Secret Garden",
+    "Where the Red Fern Grows",
+    "Bridge to Terabithia",
+    "Inkheart",
+    "Inkspell",
+    "Inkdeath",
+    "Treasure Island",
+    "A Christmas Carol",
+    "Tom Sawyer",
+    "The Call of the Wild",
+    "The Strange Case of Dr. Jekyll and Mr. Hyde",
+    "Julius Caesar",
+    "Adventures of Huckleberry Finn",
+    "Othello",
+    "Pride and Prejudice",
+    "Esperanto",
+    "Extreme Pokemon: The Guide for the Ultimate Fan"
 ];
 
 
+// gets a random book title. 1% chance of a *meme* title, 9% chance of a fanfic, 90% chance of a real title
 const getBookTitle = () => {
     const listSelector = Math.floor(Math.random() * 100);
     let list = [];
@@ -205,6 +265,7 @@ const getBookTitle = () => {
     const index = Math.floor(Math.random() * list.length);
     return list[index];
 }
+
 
 module.exports = {
     bookTitles: [...memeTitles, ...ficTitles, ...realBookTitles],

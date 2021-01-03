@@ -1,3 +1,8 @@
+//  These are the current list of handled genres. 
+//  Google forms has the values as 'Angst' instead of 'angst' which is what I want to use internally
+//  This is more important for 'Hurt + Comfort' which has spaces, which would confuse the parser
+//  so this lets me consume the genres internally, then post them to google/search the forms using google's layout. 
+
 const validGenres = {
     ANGST: 'angst',
     AU: 'au',

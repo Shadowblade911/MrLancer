@@ -3,5 +3,11 @@
   "BOT_TOKEN": "discord-api-bot-token",
   "REC_FORM_ID": "google-forms-id",
   "REC_RESPONSES_ID": "google-sheets-id",
-  "REC_RESPONSE_RANGE": "Recommendations!A1:T2000"
+  "REC_RESPONSE_RANGE": "SomeSheet!A1:T2000",
+  "SIGN_UP_FORM_ID": "google-forms-id",
+  "SIGN_UP_RESPONSES_ID": "google-sheets-id",
+  "SIGN_UP_RESPONSES_RANGE": "AnotherSheet!A1:C2000",
+  "PROMPT_FORM_ID": "google-forms-id",
+  "PROMPT_RESPONSES_ID": "google-sheet-id",
+  "PROMPT_RESPONSES_RANGE": "YetAnotherSheet!B2:B2000"
 }

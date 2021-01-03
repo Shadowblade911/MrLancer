@@ -9,6 +9,7 @@ const config = require("../config.json");
 
 const axios = require('axios').default;
 
+// these values are from the google form that this posts to
 const questionEntryValues = {
     name: "entry.391009906",
     link: "entry.350544137",
@@ -47,6 +48,8 @@ function handleReccomendation(message, requestInfo) {
     params.append(questionEntryValues.name, title);
     params.append(questionEntryValues.link, location);
     params.append(questionEntryValues.user, message.member.user.username);
+
+    // parse optional values and push into the responses
     let options = {};
     try {
         options = paramParser(requestInfo);
@@ -57,6 +60,7 @@ function handleReccomendation(message, requestInfo) {
     }
     Object.keys(options).forEach(opt => {
         const value = options[opt];
+        // this handles check box inputs
         if(_.isArray(value)){
             _.forEach(value, val => {
                 params.append(questionEntryValues[opt], val);
