@@ -20,7 +20,7 @@ const linkToSheetSource = `https://docs.google.com/spreadsheets/d/${sheetId}/edi
 
 // formatted response of a fic
 const relayFic = (fic) => {
-    return `\n ${fic.name} \n ${fic.url} \n Reccomended by: ${fic.reccedBy} \n genres: ${listGenres(fic)}`;
+    return `\n ${fic.name} \n ${fic.url} \n Recommended  by: ${fic.reccedBy} \n genres: ${listGenres(fic)}`;
 }
 
 // take an array of fics and returns one, or an error message
