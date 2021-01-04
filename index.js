@@ -23,7 +23,7 @@ client.login(config.BOT_TOKEN);
 
 // These are the prefixes that the bot is going to respond to. 
 // I kept mistyping MrLancer which is why MrLance is on this...
-const prefixes = ["!MrLancer", "!MrLance", "!MrL"];
+const prefixes = ["!mrlancer", "!lancer", "!mrlance", "!oldman", "!mrl"];
 
 
 // Enums for commands. These are what the bots is capable of responding to
@@ -81,7 +81,7 @@ client.on("message", function (message) {
     // if the message is from another bot, ignore this
     if (message.author.bot) return;
     //if the message is NOT prefixed with a prefix we care about, ignore it
-    if (!_.some(prefixes, prefix => message.content.startsWith(prefix))) {
+    if (!_.some(prefixes, prefix => message.content.toLocaleLowerCase().startsWith(prefix))) {
         return;
     }
 
