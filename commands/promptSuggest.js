@@ -37,7 +37,7 @@ function promptSuggestion(message, requestInfo) {
             'content-type': 'application/x-www-form-urlencoded;charset=utf-8'
         }
     }).then(res => {
-        message.reply(`Excellent! I've added the suggestions to the list`);
+        message.reply(`Excellent! I've added the suggestions to the list.`);
     }).catch(err => {
         console.error(err);
         generateErrorReply(message, `Something went wrong!`);

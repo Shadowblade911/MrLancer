@@ -78,7 +78,7 @@ const paramParser = (options) => {
                 ret.pairings = yankParams(options);
                 break;
             default:
-                throw new Error(`Unkown arguement: ${arg}`);
+                throw new Error(`Unknown argument: ${arg}`);
         }
     }
 

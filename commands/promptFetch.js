@@ -19,7 +19,7 @@ const linkToSheetSource = `https://docs.google.com/spreadsheets/d/${sheetId}/edi
 // code to turn a prompt into a response
 const relayPrompt = (prompt) => {
 
-    let preface = `May I Suggest?`;
+    let preface = `May I suggest?`;
     if(Math.floor(Math.random * 1000) <= 1){
         preface = `I gotchu fam.`
     }
@@ -59,7 +59,7 @@ async function fetchPrompt(message, requestInfo) {
         const prompts = data.values.filter(row => row[0] !== undefined).map(row => row[0]);
       
         if(prompts.length === 0){
-            message.reply(message, 'Something appears to be wrong and I could not find any prompts, check the sheet via `prompt list` and ensure people have suggested prompts!');
+            message.reply(message, 'Something appears to be wrong and I could not find any prompts. Check the sheet via `prompt list` and ensure people have suggested prompts!');
             return;
         }
 

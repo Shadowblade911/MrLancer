@@ -49,7 +49,7 @@ async function fetchAuthor(message, requestInfo) {
 
     // check for malformed commands / unknown input
     if(requestInfo.length > 1 || requestInfo.length === 0){
-        generateErrorReply(message, `I'm unsure of what you're asking of me. Please quesry users by simply asking for their name. Like so 'search \`[name]\`'`);
+        generateErrorReply(message, `I'm unsure of what you're asking of me. Please query users by simply asking for their name. Like so 'search \`[name]\`'`);
     }
 
     // get the author request out of the info and remove `'s in case the author has a space in the name
@@ -72,7 +72,7 @@ async function fetchAuthor(message, requestInfo) {
         
         // generate error if there's no response
         if(requestInfo.length === 0){
-            replyWithFic(message, 'Something appears to be wrong and I could not find any users, check the sheet via `author search list` and ensure people have signed up!');
+            replyWithFic(message, 'Something appears to be wrong and I could not find any user. Check the sheet via `author search list` and ensure people have signed up!');
             return;
         }
 
@@ -83,7 +83,7 @@ async function fetchAuthor(message, requestInfo) {
         if(filteredUsers.length === 1){
             message.reply(relayUser(filteredUsers[0]));
         } else if(filteredUsers.length > 1){
-            generateErrorReply(message, `I found more than one writer with that name! That shouldn't have happend!`);
+            generateErrorReply(message, `I found more than one writer with that name! That shouldn't have happened!`);
         } else {
             generateErrorReply(message, `I couldn't find a user with that name!`);
         }

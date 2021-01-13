@@ -245,7 +245,8 @@ const realBookTitles = [
     "Othello",
     "Pride and Prejudice",
     "Esperanto",
-    "Extreme Pokemon: The Guide for the Ultimate Fan"
+    "Extreme Pokemon: The Guide for the Ultimate Fan",
+    "Kingdom Keepers",
 ];
 
 

@@ -41,7 +41,7 @@ const replyWithFic = (message, ficsArr) => {
         index = Math.floor(Math.random() * weightedFics.length);
 
          
-        message.reply(`I found multiple options, here's one from the list! ${relayFic(weightedFics[index])}`);
+        message.reply(`I found multiple options. Here's one from the list! ${relayFic(weightedFics[index])}`);
     }
     return;
 }
