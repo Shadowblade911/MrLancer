@@ -20,6 +20,7 @@ const suggestionForm = `https://docs.google.com/forms/d/e/${config.PROMPT_FORM_I
 function promptSuggestion(message, requestInfo) {
     if (requestInfo.length == 0) {
         generateErrorReply(message, 'You have to tell a suggestion!');
+        return;
     }
 
     
